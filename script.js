@@ -21,7 +21,7 @@ function createRoom() {
         hideModal()
         getUserMedia({ video: false, audio: true }, (stream) => {
             local_stream = stream;
-            setLocalStream(local_stream)
+           // setLocalStream(local_stream)
         }, (err) => {
             console.log(err)
         })
@@ -72,7 +72,7 @@ function joinRoom() {
     }
     room_id = PRE + room + SUF;
     hideModal()
-    peer = new Peer("manish")
+    peer = new Peer()
     peer.on('open', (id) => {
         console.log("Connected with Id: " + id)
         getUserMedia({ video: true, audio: true }, (stream) => {
