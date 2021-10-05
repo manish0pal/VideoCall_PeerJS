@@ -21,14 +21,14 @@ function createRoom() {
         hideModal()
         getUserMedia({ video: true, audio: true }, (stream) => {
             local_stream = stream;
-            setLocalStream(local_stream)
+         //   setLocalStream(local_stream)
         }, (err) => {
             console.log(err)
         })
         notify("Waiting for peer to join.")
     })
     peer.on('call', (call) => {
-        call.answer(local_stream);
+       // call.answer(local_stream);
         call.on('stream', (stream) => {
             setRemoteStream(stream)
         })
